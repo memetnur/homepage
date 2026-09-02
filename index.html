@@ -39,23 +39,20 @@
 
           <section class="story-gallery" aria-label="Highlights">
             <div class="gallery-track">
-              <figure class="gallery-slide is-active">
-                <img src="assets/buildspace-san-francisco.png" alt="Nur Memeti with the Buildspace community in San Francisco" />
-                <figcaption><a href="https://buildspace.so">Buildspace · San Francisco, USA</a></figcaption>
-              </figure>
-              <figure class="gallery-slide">
-                <img src="assets/presenting-event.jpg" alt="Nur Memeti presenting on stage" />
-                <figcaption>Speaking and sharing ideas</figcaption>
-              </figure>
-              <figure class="gallery-slide">
-                <img src="assets/women-in-tech.png" alt="Women in Tech feature with Nur Memeti" />
-                <figcaption>Siemens & Ladies Drive Workshop · Impact Hub Zurich</figcaption>
-              </figure>
-            </div>
-            <div class="gallery-controls" aria-label="Choose highlight">
-              <button class="gallery-dot is-active" type="button" aria-label="Show highlight 1"></button>
-              <button class="gallery-dot" type="button" aria-label="Show highlight 2"></button>
-              <button class="gallery-dot" type="button" aria-label="Show highlight 3"></button>
+              <div class="gallery-strip">
+                <figure class="gallery-slide">
+                  <img src="assets/buildspace-san-francisco.png" alt="Nur Memeti with the Buildspace community in San Francisco" />
+                  <figcaption><a href="https://buildspace.so">Buildspace · San Francisco, USA</a></figcaption>
+                </figure>
+                <figure class="gallery-slide">
+                  <img src="assets/presenting-event.jpg" alt="Nur Memeti presenting on stage" />
+                  <figcaption>Speaking and sharing ideas</figcaption>
+                </figure>
+                <figure class="gallery-slide">
+                  <img src="assets/women-in-tech.png" alt="Women in Tech feature with Nur Memeti" />
+                  <figcaption>Siemens & Ladies Drive Workshop · Impact Hub Zurich</figcaption>
+                </figure>
+              </div>
             </div>
           </section>
 
@@ -109,27 +106,27 @@
         button.addEventListener("click", () => setLanguage(button.dataset.lang));
       });
 
+      const galleryTrack = document.querySelector(".gallery-strip");
       const gallerySlides = document.querySelectorAll(".gallery-slide");
-      const galleryDots = document.querySelectorAll(".gallery-dot");
       let galleryIndex = 0;
+      let galleryStartX = 0;
 
       function showGallerySlide(index) {
-        galleryIndex = index;
-        gallerySlides.forEach((slide, slideIndex) => {
-          slide.classList.toggle("is-active", slideIndex === galleryIndex);
-        });
-        galleryDots.forEach((dot, dotIndex) => {
-          dot.classList.toggle("is-active", dotIndex === galleryIndex);
-        });
+        galleryIndex = (index + gallerySlides.length) % gallerySlides.length;
+        galleryTrack.style.transform = `translateX(-${galleryIndex * 100}%)`;
       }
 
-      galleryDots.forEach((dot, index) => {
-        dot.addEventListener("click", () => showGallerySlide(index));
+      galleryTrack.addEventListener("pointerdown", (event) => {
+        galleryStartX = event.clientX;
+        galleryTrack.setPointerCapture(event.pointerId);
       });
 
-      setInterval(() => {
-        showGallerySlide((galleryIndex + 1) % gallerySlides.length);
-      }, 5000);
+      galleryTrack.addEventListener("pointerup", (event) => {
+        const distance = event.clientX - galleryStartX;
+        if (Math.abs(distance) > 45) {
+          showGallerySlide(galleryIndex + (distance < 0 ? 1 : -1));
+        }
+      });
     </script>
   </body>
 </html>
