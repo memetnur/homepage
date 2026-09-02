@@ -38,14 +38,15 @@ body {
   overflow: hidden;
   border-radius: 32px;
   background: var(--surface);
-  padding: 54px 30px 38px;
+  padding: 54px 30px 76px;
   text-align: center;
   box-shadow: 0 24px 70px rgba(43, 42, 34, 0.14);
 }
 
 .language-switch {
   position: absolute;
-  top: 18px;
+  top: auto;
+  bottom: 18px;
   right: 18px;
   z-index: 3;
   display: inline-flex;
