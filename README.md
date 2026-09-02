@@ -1,10 +1,10 @@
 # Homepage
 
-Private source repository for `www.nurmemeti.com`.
+Private source repository for `www.nurmemeti.com`, built as a Linktree-style personal homepage.
 
 ## Files
 
-- `index.html`: static homepage
+- `index.html`: static homepage template
 - `styles.css`: site styling
 - `CNAME`: custom domain marker for `www.nurmemeti.com`
 
