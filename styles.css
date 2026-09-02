@@ -118,11 +118,13 @@ h1 {
 }
 
 .story-gallery {
+  width: 100%;
   margin: 0 auto 26px;
 }
 
 .gallery-track {
   position: relative;
+  width: 100%;
   height: 230px;
   overflow: hidden;
   border-radius: 8px;
