@@ -102,25 +102,6 @@ h1 {
   line-height: 1.42;
 }
 
-.statements {
-  display: grid;
-  gap: 8px;
-  margin: 0 auto 24px;
-  max-width: 318px;
-}
-
-.statements p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 600;
-  line-height: 1.35;
-}
-
-.statements p:first-child {
-  color: var(--accent);
-}
-
 .links {
   position: relative;
   z-index: 2;
@@ -165,6 +146,50 @@ h1 {
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 700;
+  text-decoration: none;
+}
+
+.statement-shell {
+  align-items: center;
+}
+
+.statement-page {
+  display: grid;
+  min-height: min(620px, calc(100vh - 52px));
+  align-content: center;
+  gap: 22px;
+}
+
+.statement-page h1 {
+  font-size: clamp(2rem, 10vw, 3.6rem);
+  line-height: 1;
+}
+
+.statement-kicker,
+.statement-translation {
+  margin: 0;
+}
+
+.statement-kicker {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.statement-translation {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.back-link {
+  justify-self: center;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 800;
   text-decoration: none;
 }
 
