@@ -38,9 +38,40 @@ body {
   overflow: hidden;
   border-radius: 32px;
   background: var(--surface);
-  padding: 48px 30px 34px;
+  padding: 54px 30px 34px;
   text-align: center;
   box-shadow: 0 24px 70px rgba(43, 42, 34, 0.14);
+}
+
+.language-switch {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 3;
+  display: inline-flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid rgba(157, 157, 145, 0.55);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.language-switch button {
+  min-width: 36px;
+  min-height: 28px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.language-switch button.is-active {
+  background: var(--text);
+  color: #ffffff;
 }
 
 .avatar {
@@ -62,8 +93,17 @@ h1 {
   letter-spacing: 0;
 }
 
+.role {
+  margin: 10px auto 0;
+  max-width: 310px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
 .tagline {
-  margin: 8px 0 28px;
+  margin: 12px 0 24px;
   color: var(--muted);
   font-size: 0.98rem;
   letter-spacing: 0;
