@@ -3,3 +3,4 @@ node_modules/
 dist/
 hostpoint-upload/
 homepage-hostpoint-upload.zip
+tmp/
