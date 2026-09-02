@@ -6,6 +6,7 @@ Private source repository for `www.nurmemeti.com`, built as a Linktree-style per
 
 - `index.html`: static homepage template
 - `styles.css`: site styling
+- `assets/profile.png`: profile picture
 - `CNAME`: custom domain marker for `www.nurmemeti.com`
 
 ## Hostpoint
