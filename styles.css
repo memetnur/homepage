@@ -94,12 +94,31 @@ h1 {
 }
 
 .role {
-  margin: 10px auto 26px;
+  margin: 10px auto 18px;
   max-width: 310px;
   color: var(--text);
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 1.42;
+}
+
+.statements {
+  display: grid;
+  gap: 8px;
+  margin: 0 auto 24px;
+  max-width: 318px;
+}
+
+.statements p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.statements p:first-child {
+  color: var(--accent);
 }
 
 .links {
